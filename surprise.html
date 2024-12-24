@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #ffe4e1;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 50px;
+      color: #ff69b4;
+    }
+    img {
+      width: 60%;
+      margin: 20px 0;
+    }
+    .scroll-section {
+      margin: 30px;
+    }
+    p {
+      font-size: 20px;
+      color: #6a5acd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Surprise! 🎉</h1>
+  <div id="confetti"></div>
+  <img src="https://via.placeholder.com/800x400.png?text=Happy+Journey!" alt="Happy Journey">
+  <div class="scroll-section">
+    <p>Scroll down for more memories!</p>
+    <img src="https://via.placeholder.com/400x300.png?text=Beautiful+View" alt="View">
+    <p>Enjoy the little things in life!</p>
+    <img src="https://via.placeholder.com/400x300.png?text=Adventure+Awaits" alt="Adventure">
+    <p>Stay positive and keep smiling!</p>
+  </div>
+
+  <script>
+    // Confetti animation
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.style.position = "fixed";
+      confetti.style.width = "10px";
+      confetti.style.height = "10px";
+      confetti.style.backgroundColor = getRandomColor();
+      confetti.style.top = "0";
+      confetti.style.left = Math.random() * window.innerWidth + "px";
+      confetti.style.animation = "fall 4s linear infinite";
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 4000);
+    }
+
+    function getRandomColor() {
+      const colors = ["#ff69b4", "#ffa07a", "#7fffd4", "#8a2be2", "#ffd700"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    setInterval(createConfetti, 100);
+
+    // CSS Animation
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        0% { transform: translateY(-50px) rotate(0deg); }
+        100% { transform: translateY(100vh) rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>

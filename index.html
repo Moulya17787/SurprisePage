@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise Page - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f8ff;
+      margin-top: 100px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Surprise!</h1>
+  <p>Please enter your username to proceed:</p>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Enter your username" required>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="error" style="color: red; display: none;">Invalid username!</p>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const validUsername = "kaavi"; // Replace with the valid username
+      const enteredUsername = document.getElementById('username').value;
+
+      if (enteredUsername === validUsername) {
+        window.location.href = "surprise.html"; // Redirect to surprise page
+      } else {
+        document.getElementById('error').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
