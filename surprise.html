@@ -29,6 +29,13 @@
       font-size: 20px;
       color: #6a5acd;
     }
+    .surprise-section {
+      margin-top: 40px;
+    }
+    .video-container {
+      display: none;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -36,15 +43,27 @@
   <h1>Hii Kaaviiiii🐰</h1>
   <h2>Please scroll down for more!!</h2>
   <div id="confetti"></div>
-  <!-- Replace this placeholder URL with your own image -->
- <img src="KAV1.jpeg" alt="KAV1">
+  <img src="KAV1.jpeg" alt="KAV1">
   <div class="scroll-section">
-    
-    <!-- Replace these placeholder URLs with your own images -->
-    <img src="KAV2.jpeg" alt="KAV1">
-    <p> The first picture of us!!❤️</p></p>
-    <img src="KM1.jpeg" alt="KAV1">
-  
+    <img src="KAV2.jpeg" alt="KAV2">
+    <p>The first picture of us!!❤️</p>
+    <img src="KM1.jpeg" alt="KM1">
+  </div>
+
+  <div class="surprise-section">
+    <p>Do you want to see the next surprise? 🥳</p>
+    <label>
+      <input type="checkbox" id="next-surprise" /> Yes, show me!
+    </label>
+  </div>
+
+  <div class="video-container" id="video-container">
+    <p>Here’s your surprise video! 🎥</p>
+    <!-- Replace the URL with your actual video URL -->
+    <video width="80%" controls>
+      <source src="surprise_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 
   <script>
@@ -86,6 +105,18 @@
       }
     `;
     document.head.appendChild(style);
+
+    // Show video on checkbox select
+    const checkbox = document.getElementById("next-surprise");
+    const videoContainer = document.getElementById("video-container");
+
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        videoContainer.style.display = "block";
+      } else {
+        videoContainer.style.display = "none";
+      }
+    });
   </script>
 </body>
 </html>
