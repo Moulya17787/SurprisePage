@@ -18,18 +18,21 @@
             overflow: hidden;
         }
        .rabbit {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 200px; /* Adjust the size as needed */
-        }    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;  /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
 
-        .rabbit.left {
-            left: 20%; /* Adjust position */
-        }
-        .rabbit.right {
-            right: 20%; /* Adjust position */
-        }
+.rabbit.left {
+    left: 0;  /* Position the left image at the left side */
+}
+
+.rabbit.right {
+    right: 0;  /* Position the right image at the right side */
+}
+
         .login-box {
             background: #fff;
             padding: 20px 30px;
