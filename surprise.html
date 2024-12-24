@@ -34,17 +34,21 @@
 <body>
   <h1>Surprise! 🎉</h1>
   <div id="confetti"></div>
-  <img src="https://via.placeholder.com/800x400.png?text=Happy+Journey!" alt="Happy Journey">
+  <!-- Replace this placeholder URL with your own image -->
+ <img src="KAV1.jpeg" alt="KAV1">
   <div class="scroll-section">
     <p>Scroll down for more memories!</p>
-    <img src="https://via.placeholder.com/400x300.png?text=Beautiful+View" alt="View">
+    <!-- Replace these placeholder URLs with your own images -->
+    <img src="KAV2.jpeg" alt="KAV1">
     <p>Enjoy the little things in life!</p>
-    <img src="https://via.placeholder.com/400x300.png?text=Adventure+Awaits" alt="Adventure">
+    <img src="KM1.jpeg" alt="KAV1">
     <p>Stay positive and keep smiling!</p>
   </div>
 
   <script>
     // Confetti animation
+    let confettiInterval;
+
     function createConfetti() {
       const confetti = document.createElement("div");
       confetti.style.position = "fixed";
@@ -63,13 +67,19 @@
       return colors[Math.floor(Math.random() * colors.length)];
     }
 
-    setInterval(createConfetti, 100);
+    // Start confetti animation
+    confettiInterval = setInterval(createConfetti, 100);
+
+    // Stop confetti after 2 seconds
+    setTimeout(() => {
+      clearInterval(confettiInterval);
+    }, 2000);
 
     // CSS Animation
     const style = document.createElement('style');
     style.innerHTML = `
       @keyframes fall {
-        0% { transform: translateY(-50px) rotate(0deg); }
+        0% { transform: translateY(-50px) rotate(0deg); } 
         100% { transform: translateY(100vh) rotate(360deg); }
       }
     `;
