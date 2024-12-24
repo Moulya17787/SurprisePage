@@ -17,12 +17,16 @@
             position: relative;
             overflow: hidden;
         }
-        .rabbit {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 150px; /* Adjust the size as needed */
-        }
+       .rabbit {
+    position: absolute;
+    top: 50%;
+    left: 0; /* Align to the left edge */
+    right: 0; /* Align to the right edge */
+    width: 100%; /* Make the image fill the entire width of the screen */
+    height: auto; /* Maintain aspect ratio */
+    transform: translateY(-50%);
+}
+
         .rabbit.left {
             left: 30%; /* Adjust position */
         }
