@@ -18,9 +18,37 @@
       font-size: 50px;
       color: #ff69b4;
     }
-    img {
-      width: 60%;
-      margin: 20px 0;
+    h2 {
+      color: #6a5acd;
+    }
+    .image-frame {
+      display: inline-block;
+      margin: 20px;
+      padding: 15px;
+      border: 5px dashed #ff69b4;
+      border-radius: 20px;
+      position: relative;
+    }
+    .image-frame::before,
+    .image-frame::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 50px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+      top: -30px;
+    }
+    .image-frame::before {
+      left: 20px;
+    }
+    .image-frame::after {
+      right: 20px;
+    }
+    .image-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
     }
     .scroll-section {
       margin: 30px;
@@ -43,11 +71,31 @@
   <h1>Hii Kaaviiiii🐰</h1>
   <h2>Please scroll down for more!!</h2>
   <div id="confetti"></div>
-  <img src="KAV1.jpeg" alt="KAV1">
+
+  <!-- First image with frame -->
+  <div class="image-frame">
+    <img src="KAV1.jpeg" alt="KAV1">
+  </div>
+
   <div class="scroll-section">
-    <img src="KAV2.jpeg" alt="KAV2">
+    <!-- Second image with frame -->
+    <div class="image-frame">
+      <img src="KAV2.jpeg" alt="KAV2">
+    </div>
     <p>The first picture of us!!❤️</p>
-    <img src="KM1.jpeg" alt="KM1">
+
+    <!-- Third image with frame -->
+    <div class="image-frame">
+      <img src="KM1.jpeg" alt="KM1">
+    </div>
+
+    <!-- Additional images with frames -->
+    <div class="image-frame">
+      <img src="KAV3.jpeg" alt="KAV3">
+    </div>
+    <div class="image-frame">
+      <img src="KM2.jpeg" alt="KM2">
+    </div>
   </div>
 
   <div class="surprise-section">
